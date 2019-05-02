@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-// import App from './App';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
+import App from './App';
+import Saved from './components/Saved';
+import './index.css';
 
-import { Route, BrowserRouter as Router } from 'react-router-dom'
-import Search from './components/Search';
 
 const routing = (
   <Router>
     <div>
-      {/* <Route path="/" component={App} /> */}
-      <Route path="/" component={Search} />
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route exact path="/saved" component={Saved} />
+      </Switch>
     </div>
   </Router>
 )

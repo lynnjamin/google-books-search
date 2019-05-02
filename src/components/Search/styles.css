@@ -1,11 +1,17 @@
-.searchBox {
-     display: flex;
-     width: 100%;
-     flex-direction: column;
+.cardClass{
+  border: 3px solid black;
+  border-radius: 0;
 }
 
-.bookForm {
-     display: flex;
-     width: 100%;
-     flex-direction: column;
+.buttonArea {
+  display: flex;
+}
+
+.searchButton {
+  margin-left: auto;
+  border-radius: 0;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  box-shadow: 4px 4px 1px 2px black;
 }
