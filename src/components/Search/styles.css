@@ -1,0 +1,11 @@
+.searchBox {
+     display: flex;
+     width: 100%;
+     flex-direction: column;
+}
+
+.bookForm {
+     display: flex;
+     width: 100%;
+     flex-direction: column;
+}
