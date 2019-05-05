@@ -5,10 +5,7 @@ import './styles.css';
 
 
 function Book(props) {
-  console.log('authors: ', props.authors);
   const authorsString = props.authors.join(', ');
-  console.log('authorsString: ', authorsString);
-
   return (
     <div className={'results'}>
       <div className={'topSection'}>
@@ -30,15 +27,12 @@ function Book(props) {
           width={64}
           height={64}
           className="mr-3"
-          src="https://i.ytimg.com/vi/EDzLx3hkli0/maxresdefault.jpg"
+          src={props.thumbnail}
           alt="Generic placeholder"
         />
         <Media.Body>
           <p>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-            ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
-            tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-            Donec lacinia congue felis in faucibus.
+            {props.description}
           </p>
         </Media.Body>
       </Media>
