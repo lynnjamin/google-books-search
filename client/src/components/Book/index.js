@@ -6,6 +6,12 @@ import './styles.css';
 
 function Book(props) {
   const authorsString = props.authors.join(', ');
+
+
+  const onViewClick = () => {
+    window.open(props.canonicalVolumeLink, '_blank');
+  }
+
   return (
     <div className={'results'}>
       <div className={'topSection'}>
@@ -14,7 +20,7 @@ function Book(props) {
           <div className={'bookDescriptionAuthors'}>Written By {authorsString}</div>
         </div>
         <div className={'lovelyButtons'}>
-          <Button className={'resultsLeftButton'} variant="primary" type="submit">
+          <Button className={'resultsLeftButton'} onClick={onViewClick} variant="primary" type="submit">
               View
           </Button>
           <Button className={'resultsRightButton'} variant="primary" type="submit">

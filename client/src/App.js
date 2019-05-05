@@ -51,12 +51,13 @@ class App extends React.Component {
             {
               this.state.books.map((book, idx) => (
                 <Book
-                  key={idx}
-                  title={book.volumeInfo.title}
-                  authors={book.volumeInfo.authors}
-                  description={book.volumeInfo.description}
-                  thumbnail={book.volumeInfo.imageLinks.thumbnail}
-                />
+                key={idx}
+                title={book.volumeInfo.title}
+                authors={book.volumeInfo.authors}
+                description={book.volumeInfo.description}
+                thumbnail={book.volumeInfo.imageLinks.thumbnail}
+                canonicalVolumeLink={book.volumeInfo.canonicalVolumeLink}
+              />
               ))
             }
             {/* <Book title={'Harry Potter'} authors={['JFK']} />
