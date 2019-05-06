@@ -13,8 +13,6 @@ class App extends React.Component {
          searchValue: '',
          books: [],
     };
-    // this.getBooks = this.getBooks.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange = e => {
@@ -23,7 +21,6 @@ class App extends React.Component {
 
   getBooks = e => {
     e.preventDefault();
-
     axios.request({
         method: 'get',
         url: 'https://www.googleapis.com/books/v1/volumes?q=' + this.state.searchValue
@@ -35,8 +32,8 @@ class App extends React.Component {
     });
   }
 
+
   render() {
-    console.log('this.state.books: ', this.state.books);
     return (
       <div className="App">
         <NavBar />
@@ -60,10 +57,7 @@ class App extends React.Component {
               />
               ))
             }
-            {/* <Book title={'Harry Potter'} authors={['JFK']} />
-            <Book title={'Parry Hotter'} authors={['Author1', 'Author2']} />
-            <Book title={'ASDGASGAS'} authors={['JFK']} />
-            <Book title={'12412412'} authors={['JFK', 'asdgasg', 'asdgas']} /> */}
+            
           </Card>
         </div>
       </div>

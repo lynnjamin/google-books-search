@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import Media from 'react-bootstrap/Media'
 import Button from 'react-bootstrap/Button'
 import './styles.css';
@@ -7,11 +8,15 @@ import './styles.css';
 function Book(props) {
   const authorsString = props.authors.join(', ');
 
-
+  // For View Books
   const onViewClick = () => {
     window.open(props.canonicalVolumeLink, '_blank');
   }
 
+  const saveBooks = bookData => {
+    return axios.post("/api/books", bookData);
+  };
+   
   return (
     <div className={'results'}>
       <div className={'topSection'}>
@@ -23,7 +28,7 @@ function Book(props) {
           <Button className={'resultsLeftButton'} onClick={onViewClick} variant="primary" type="submit">
               View
           </Button>
-          <Button className={'resultsRightButton'} variant="primary" type="submit">
+          <Button className={'resultsRightButton'} onClick={() => { saveBooks({ title: 'test' }) }} variant="primary" type="button">
               Save
           </Button>
         </div>
